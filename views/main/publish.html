@@ -10,17 +10,20 @@
 </head>
 <body>
     <main class="container">
-        <form action="/pulish" method="get">
+        <form action="/pulish" method="post">
             <label for="blog_title">文章标题:</label>
-            <input type="text" name="blog_title" id="blog_title" placeholder="请输入您的博客标题">
+            <input type="text" name="blog_title" placeholder="请输入您的博客标题">
         
             <label>文章简介:</label>
-            <textarea name="bolg_intro" rows="5" placeholder="请输入您的博客简介"></textarea>
+            <textarea name="blog_intro" rows="5" placeholder="请输入您的博客简介"></textarea>
         
             <label>文章内容:</label>
-            <textarea name="bolg_content" rows="15" placeholder="请输入您的博客内容"></textarea>
-            <input type="submit" value="发布">
-            <input type="reset" value="取消">
+            <textarea name="blog_content" rows="15" placeholder="请输入您的博客内容"></textarea>
+            <label>文章内容:</label>
+            <input type="text" name="blog_author" placeholder="请输入您的博客作者">
+            <button type="submit" name="submit" value="submit">发布</button>
+            <button type="submit" name="submit" value="temstorage">存为草稿</button>
+            <button type="reset" name="reset" value="reset">取消</button>
         </form>
     </main>
 </body>
