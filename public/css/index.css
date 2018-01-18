@@ -1,10 +1,6 @@
-* {
-  border: 1px solid #000;
-}
-
 .container {
   width: 960px;
-  margin: 0 auto;
+  margin: 40px auto;
   border: none;
 }
 
@@ -15,13 +11,18 @@
   font-weight: bold;
 }
 
-.container h1 a {
-  color: #000;
-}
-
 .container li {
   margin-bottom: 10px;
   padding: 10px;
+  border: 1px solid #000;
+}
+
+.container li::after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
 }
 
 .container li h2 {
@@ -29,6 +30,20 @@
   line-height: 2;
 }
 
+.container li h2 a {
+  color: #000;
+}
+
 .container li .intro {
   height: 80px;
+}
+
+.container li .detail span.auth, .container li .detail span.publish_time {
+  float: left;
+  margin-right: 30px;
+}
+
+.container li .detail span.comment, .container li .detail span.page_view {
+  float: right;
+  margin-left: 30px;
 }
