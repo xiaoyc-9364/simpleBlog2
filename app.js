@@ -11,8 +11,20 @@ mongoose.connect('mongodb://localhost:27019/blog', {useMongoClient: true}, funct
     }
 });
 
-var server = http.createServer(function(req, res) {
+function getCss(req, res) {
+    if (/^(\/public\/)\w+(\.css)$/.test(req.url) ) {
+        fs.readFile(`.${req.url}`, function(err, data) {
+                res.writeHead(200, {'Content-Type': 'text/css; charset=utf-8'});
+                res.write(data);
+                res.end();
+            });
+            // return;
+    }
+}
 
+
+
+var server = http.createServer(function(req, res) {
     if(req.method === 'POST') {
         let body = '';
         req.on('data', (data) => {
@@ -29,15 +41,23 @@ var server = http.createServer(function(req, res) {
 
         return;
     } else {
-        if (/\.css$/.test(req.url)) {
-            fs.readFile(`./${req.url}`, function(err,data) {
-                res.writeHead(200, {'Content-Type': 'text/css; charset=utf-8'});
-                res.write(data);
-                res.end();
-            });
-            return;
+        // if (/\.css$/.test(req.url)) {
+        //     fs.readFile(`./${req.url}`, function(err,data) {
+        //         res.writeHead(200, {'Content-Type': 'text/css; charset=utf-8'});
+        //         res.write(data);
+        //         res.end();
+        //     });
+        //     return;
+        // }
+        // getCss(req, res);
+        if (/^\/public\/\w+\.css$/.test(req.url) ) {
+            fs.readFile(`./${req.url}`, function(err, data) {
+                    res.writeHead(200, {'Content-Type': 'text/css; charset=utf-8'});
+                    res.write(data);
+                    res.end();
+                });
+                return;
         }
-    
         switch(req.url) {
             case '/': 
                 fs.readFile('./views/main/index.html', function(err,data) {
@@ -68,3 +88,4 @@ var server = http.createServer(function(req, res) {
     }
 });
 server.listen(8088, 'localhost');
+console.log(new Date);
