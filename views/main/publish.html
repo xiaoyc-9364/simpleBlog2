@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href="/public/css/publish.css">
+    <script src="/public/js/jquery-3.2.1.min.js"></script>
+
     <title>发布博客</title>
 </head>
 <body>
     <main class="container">
-        <form action="/pulish" method="post">
+        <form action="/" method="post" id="blog_info">
             <label for="blog_title">文章标题:</label>
             <input type="text" name="blog_title" placeholder="请输入您的博客标题">
         
@@ -19,12 +21,17 @@
         
             <label>文章内容:</label>
             <textarea name="blog_content" rows="15" placeholder="请输入您的博客内容"></textarea>
-            <label>文章内容:</label>
-            <input type="text" name="blog_author" placeholder="请输入您的博客作者">
-            <button type="submit" name="submit" value="submit">发布</button>
-            <button type="submit" name="submit" value="temstorage">存为草稿</button>
-            <button type="reset" name="reset" value="reset">取消</button>
+            <label>文章作者:</label>
+            <input type="text" name="blog_author" placeholder="请输入您的名字">
+            <div class="submit_button">
+                <a href="/" class="back">返回博客列表</a>
+                <button type="submit" name="submit" value="submit">发布</button>
+                <!-- <button type="submit" name="submit" value="temstorage">存为草稿</button> -->
+                <button type="reset" name="reset" value="reset">取消</button>
+            </div>
+            
         </form>
     </main>
+    <script src="/public/js/publish.js"></script>
 </body>
 </html>
