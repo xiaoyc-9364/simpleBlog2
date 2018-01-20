@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'),
     http = require('http'),
     querystring = require('querystring'),
-    fs = require('fs'),
+    fs = require('fs');
 
 //自定义模块
 const blogData = require('./models/Blog'),
@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost:27019/blog', {useMongoClient: true}, funct
 });
 //创建服务器
 const server = http.createServer(function(req, res) {
-    if(req.method === 'POST') {
+    if(req.method.toUpperCase() === 'POST') {
         blogData(req, res);
     } else {
         staticRequeat.getCss(req, res);     //css请求
