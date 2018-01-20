@@ -1,0 +1,102 @@
+a:hover {
+    text-decoration: underline;
+}
+.container {
+    width: 960px;
+    margin: 40px auto;
+    border: none;
+
+    h1 {
+        text-align: center;
+        line-height: 2;
+        font-size: 30px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+    }
+
+    li {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #000;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+       
+        h2 {
+            font-size: 18px;
+            line-height: 2;
+
+            a {
+                color: #000;
+            }
+        }
+
+        .intro {
+            height: 4.5em;
+            line-height: 1.5em;
+            // white-space: n/; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .detail{
+            span {
+                display: inline-block;
+
+                &.auth{
+                    width: 150px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    a {
+                        color: rgb(5, 127, 203);
+                    }
+                }
+
+                &.auth,
+                &.publish_time {
+                    float: left;
+                    margin-right: 30px;
+                }
+
+                &.comment,
+                &.page_view {
+                    float: right;
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+    .back,
+    .write_blog {
+        display: inline-block;
+        padding: 0 20px;
+        min-width: 120px;
+        height: 30px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        line-height: 30px;
+        color: #000;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 15px;
+        outline: none;
+        font-size: 16px;
+        text-decoration: none;
+
+        &:hover {
+            background: rgb(82, 146, 214);
+            color: #fff;
+        }
+    }
+}

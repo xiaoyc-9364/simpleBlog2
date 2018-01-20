@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博客首页</title>
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+</head>
+<body>
+    <main class="container">
+        <h1>博客文章汇总</h1>
+        <a href="/publish" class="write_blog">写博客</a>
+        <div>
+            <ul class="all_blog_article">
+                {{each list}}    
+                <li>
+                    <h2><a href="/blogs/?title={{$value.title}}">{{$value.title}}</a></h2>
+                    <p class="intro">简介:&nbsp;&nbsp;&nbsp;&nbsp;{{$value.intro}}</p>
+                    <div class="detail">
+                        <span class="auth">作者:&nbsp;<a href="/author/?author={{$value.author}}">{{$value.author}}</a></span>
+                        <span class="publish_time">发表时间: {{$value.date}}</span>
+                        <span class="comment">评论(0)</span>
+                        <span class="page_view">阅读(0)</span>
+                    </div>
+                </li>
+                {{/each}}
+                
+            </ul>
+        </div>
+
+        <!-- <a href="/?page={{}}" -->
+    </main>
+    <script>
+    
+    </script>
+
+
+</body>
+</html>
