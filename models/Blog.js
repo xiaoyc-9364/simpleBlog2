@@ -32,6 +32,7 @@ module.exports = function(req, res) {
                 date = year + month + day + ' ' + hours + ':' + minutes + ':' + seconds;
 
             if (body.submit === "submit") {
+                
                 Blog.findOne({
                     title: title        //查找上传的标题是否存在
                 }).then(function(data) {
@@ -47,12 +48,12 @@ module.exports = function(req, res) {
                     });
                     return blog.save();
                 }).then(function(newData) {
-                    // const html = template(__dirname + "/readBlog", newData);
-
-                    // res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
-                    // res.write(html);
-                    // res.end();
-                    showIndex(req, res);    //返回首页
+                    const html = template(__dirname + "/template/readBlog", newData);
+                    res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+                    res.write(html);
+                    console.log(html);
+                    res.end();
+                    // showIndex(req, res);    //返回首页
                 });
                 return;
             }

@@ -7,11 +7,14 @@
     <title>博客首页</title>
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="shortcut icon" href="/public/images/bitbug_favicon.ico" />
+
 </head>
 <body>
     <main class="container">
-        <h1>博客文章汇总</h1>
+        <h1>{{list[0].author}}的博客文章汇总</h1>
         <a href="/publish" class="write_blog">写博客</a>
+        <a href="/" class="back">返回博客汇总表</a>
         <div>
             <ul class="all_blog_article">
                 {{each list}}    
@@ -26,11 +29,9 @@
                     </div>
                 </li>
                 {{/each}}
-                
             </ul>
         </div>
-
-        <!-- <a href="/?page={{}}" -->
+        
     </main>
     <script>
     

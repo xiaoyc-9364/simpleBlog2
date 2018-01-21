@@ -1,7 +1,7 @@
 let fs = require('fs');
 
-module.exports = {
-    getCss(req, res) {
+module.exports = (req, res) => {
+    if (/^\/public\//.test(req.url)) {
         if (/\.css$/.test(req.url) ) {      //css请求
             fs.readFile(`./${req.url}`, function(err, data) {
                 if (err) {
@@ -11,12 +11,8 @@ module.exports = {
                 res.write(data);
                 res.end();
             });
-            return;
-        } 
-    },
 
-    getJavascript(req, res) {               //接收请求
-        if (/\.js$/.test(req.url) ) {
+        } else if (/\.js$/.test(req.url)) {     //js请求
             fs.readFile(`./${req.url}`, function(err, data) {
                 if (err) {
                     throw err;
@@ -25,7 +21,29 @@ module.exports = {
                 res.write(data);
                 res.end();
             });
+
+        } else if (/\.ico$/.test(req.url)) {    //ico请求
+            fs.readFile(`./${req.url}`, function(err, data) {
+                if (err) {
+                    throw err;
+                } else {
+                    res.writeHead(200, {'Content-Type': 'image/x-icon'});
+                    res.write(data);
+                    res.end();
+                }
+            });
             return;
+        } else {    //图片请求
+            fs.readFile(`./${req.url}`, 'binary', function(err, data) {
+                if (err) {
+                    throw err;
+                }
+                res.writeHead(200, {'Content-type': 'iamge/jpeg'});
+                res.write(data, 'binary');
+                res.end();
+            })
         }
-    },
+        return;
+    }
+   
 };

@@ -22,7 +22,7 @@ module.exports = (req, res) => {
             Blog.find().sort({_id: -1}).then((info) => {
                 const data = {list: info};
     
-                const html = template(__dirname + "/index", data);
+                const html = template(__dirname + "/template/index", data);
     
                 res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
                 res.write(html);
@@ -42,7 +42,7 @@ module.exports = (req, res) => {
         }).sort({_id: -1}).then((docs) => {
             const data = {list: docs};
 
-            const html = template(__dirname + "/sameOneBlog", data);
+            const html = template(__dirname + "/template/sameOneBlog", data);
 
             res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
             res.write(html);

@@ -5,7 +5,7 @@ module.exports = (req, res) => {
             if (err) {
                 throw err;
             } else {
-                res.writeHead(200, {'Content-Type': 'image/x-icon; charset=utf-8'});
+                res.writeHead(200, {'Content-Type': 'image/x-icon'});
                 res.write(data);
                 res.end();
             }
