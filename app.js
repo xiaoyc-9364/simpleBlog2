@@ -23,6 +23,33 @@ mongoose.connect('mongodb://localhost:27019/blog', {useMongoClient: true}, funct
 const server = http.createServer(function(req, res) {
     if(req.method.toUpperCase() === 'POST') {
         blogData(req, res);
+
+        // let body = '';
+
+        // req.on('data', (data) => {
+        //     body += data;
+        // });
+        // req.on('end', () => {
+        //     console.log(body);
+        // });
+        // // body = querystring.parse(body)
+        // console.log(body);
+        // fs.readFile('./views/main/publish.html', function(err, data) {
+        //     res.writeHead(200, {'Content-Type': 'application/json'});
+        //     res.write(body);
+        //     res.end();
+        // });
+        // res.writeHead(200, {"Content-Type": "application/json"});  
+        // var otherArray = ["item1", "item2"];  
+        // var otherObject = { item1: "item1val", item2: "item2val" };  
+        // var json = JSON.stringify({   
+        //     anObject: otherObject,   
+        //     anArray: otherArray,   
+        // });  
+        // res.write(json);
+        // res.end();  //！！一定要加配置的回调方法名  
+
+
     } else {
         staticRequeat.getCss(req, res);     //css请求
         staticRequeat.getJavascript(req, res);      //js请求
@@ -33,3 +60,9 @@ const server = http.createServer(function(req, res) {
     }
 });
 server.listen(8088, 'localhost');
+
+function sendJson(req, res, body) {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.write(body);
+    res.end();
+}

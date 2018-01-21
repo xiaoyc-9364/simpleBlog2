@@ -35,7 +35,10 @@
             text-overflow: ellipsis;
         }
     }
-
+    .warnMessage {
+        color: red;
+        
+    }
     .submit_button {
         width: 800px;
         margin: 10px auto;

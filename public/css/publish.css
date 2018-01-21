@@ -31,6 +31,10 @@
   text-overflow: ellipsis;
 }
 
+.container .warnMessage {
+  color: red;
+}
+
 .container .submit_button {
   width: 800px;
   margin: 10px auto;

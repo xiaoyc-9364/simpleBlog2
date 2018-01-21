@@ -16,7 +16,7 @@
             <ul class="all_blog_article">
                 {{each list}}    
                 <li>
-                    <h2><a href="/blogs/?title={{$value.title}}">{{$value.title}}</a></h2>
+                    <h2><a href="/blogs/?id={{$value._id}}">{{$value.title}}</a></h2>
                     <p class="intro">简介:&nbsp;&nbsp;&nbsp;&nbsp;{{$value.intro}}</p>
                     <div class="detail">
                         <span class="auth">作者:&nbsp;<a href="/author/?author={{$value.author}}">{{$value.author}}</a></span>

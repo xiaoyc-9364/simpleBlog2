@@ -1,7 +1,15 @@
+const fs = require('fs');
 module.exports = (req, res) => {
     if (/\/favicon.ico/g.test(req.url)) {
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-        res.end();
+        fs.readFile('./public/images/bitbug_favicon.ico', function(err, data) {
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {'Content-Type': 'image/x-icon; charset=utf-8'});
+                res.write(data);
+                res.end();
+            }
+        });
         return;
     }
 };

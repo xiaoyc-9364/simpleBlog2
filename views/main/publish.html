@@ -12,25 +12,26 @@
 </head>
 <body>
     <main class="container">
-        <form action="/" method="post" id="blog_info">
-            <label for="blog_title">标题:</label>
-            <input type="text" name="blog_title" placeholder="请输入您的博客标题">
-        
-            <label>简介:</label>
-            <textarea name="blog_intro" rows="5" placeholder="请输入您的博客简介"></textarea>
-        
-            <label>内容:</label>
-            <textarea name="blog_content" rows="15" placeholder="请输入您的博客内容"></textarea>
-            <label>作者:</label>
-            <input type="text" name="blog_author" placeholder="请输入您的名字">
-            <div class="submit_button">
-                <a href="/" class="back">返回博客列表</a>
-                <button type="submit" name="submit" value="submit">发布</button>
-                <!-- <button type="submit" name="submit" value="temstorage">存为草稿</button> -->
-                <button type="reset" name="reset" value="reset">取消</button>
-            </div>
+        <!-- <form action="/" method="post" id="blog_info"> -->
+        <label for="blog_title">标题:</label>
+        <input type="text" name="blog_title" placeholder="请输入您的博客标题">
+    
+        <label>简介:</label>
+        <textarea name="blog_intro" rows="5" placeholder="请输入您的博客简介"></textarea>
+    
+        <label>内容:</label>
+        <textarea name="blog_content" rows="15" placeholder="请输入您的博客内容"></textarea>
+        <label>作者:</label>
+        <input type="text" name="blog_author" placeholder="请输入您的名字">
+        <p id="warnMessage" class="warnMessage">&nbsp;</p>
+        <div class="submit_button">
+            <a href="/" class="back">返回博客列表</a>
+            <button type="submit" name="submit" value="submit">发布</button>
+            <!-- <button type="submit" name="submit" value="temstorage">存为草稿</button> -->
+            <button type="reset" name="reset" value="reset">取消</button>
+        </div>
             
-        </form>
+        <!-- </form> -->
     </main>
     <script src="/public/js/publish.js"></script>
 </body>
