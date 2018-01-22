@@ -16,9 +16,56 @@ a:hover {
         text-overflow: ellipsis;
         
     }
+    .search_blog {
+        height: 35px;
+        label {
+            display: inline-block;
+            padding: 0 15px;
+            line-height: 35px;
+            font-size: 18px;
+        }
+
+        select {
+            width: 100px;
+            line-height: 35px;
+            outline: none;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        input[type="search"] {
+            width: 250px;
+            height: 27px;
+            padding-left: 10px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 1px;
+            height: 27px;
+            padding: 0 20px;
+            border: 1px solid #000;
+            border-radius: 15px;
+            background: none;
+            font-size: 18px;
+            box-sizing: border-box;
+            outline: none;
+            cursor: pointer;
+            
+
+            &:hover {
+                background: rgb(82, 146, 214);
+                color: #fff;
+            }
+        }
+    }
 
     li {
-        margin-bottom: 10px;
+        margin: 10px 0;
         padding: 10px;
         border: 1px solid #000;
 
@@ -31,7 +78,7 @@ a:hover {
         }
        
         h2 {
-            font-size: 18px;
+            font-size: 20px;
             line-height: 2;
 
             a {
@@ -76,14 +123,11 @@ a:hover {
             }
         }
     }
-
-    .back,
-    .write_blog {
+    .button {
         display: inline-block;
         padding: 0 20px;
         min-width: 120px;
         height: 30px;
-        margin-right: 30px;
         margin-bottom: 10px;
         line-height: 30px;
         color: #000;
@@ -94,9 +138,22 @@ a:hover {
         font-size: 16px;
         text-decoration: none;
 
+        &.prevpage {
+            float: left;
+        }
+
+        &.nextpage {
+            float: right;
+        }
+
         &:hover {
             background: rgb(82, 146, 214);
             color: #fff;
         }
+
+    }
+
+    .page_info {
+        text-align: center;
     }
 }

@@ -6,8 +6,7 @@ module.exports = throwErr = (req, res) => {
             throwErr(req, res);
         }
         res.writeHead(200, {'Content-Type': 'text/html; chatset=utf-8'});
-        res.write(data);
-        res.end();
+        res.end(data);
     });
     return;
 };

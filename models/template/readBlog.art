@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
             <span class="publish_time">发表时间: {{date}}</span>
         </div>
         <p class="content">{{content}}</p>
-        <a href="/" class="back">返回博客列表</a>
+        <a href="/index" class="back">返回博客列表</a>
         <a href="/publish" class="write_blog">写博客</a>
     </article>
 </body>

@@ -8,13 +8,27 @@
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="shortcut icon" href="/public/images/bitbug_favicon.ico" />
-
+    <script src="/public/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <main class="container">
         <h1>博客文章汇总</h1>
-        <a href="/publish" class="write_blog">写博客</a>
+        <a href="/publish" class="write_blog  button">写博客</a>
         <div>
+            <div class="search_blog">
+                <label for="search">搜索类型:</label>
+                <select name="search_type" id="search_type">
+                        <option value="all">全部</option>
+                        <option value="title">标题</option>
+                        <option value="intro">简介</option>
+                        <option value="content">内容</option>
+                        <option value="author">作者</option>
+                </select>
+                <label for="keyword">关键字:</label>
+                <input type="search" name="keyword" id="keyword">
+                <button type="submit" name="search" id="search_btn">搜索</button>
+            </div>
+            
             <ul class="all_blog_article">
                 {{each list}}    
                 <li>
@@ -31,12 +45,11 @@
                 
             </ul>
         </div>
-
-        <!-- <a href="/?page={{}}" -->
+        <p class="page_info">一共有&nbsp;{{count}}&nbsp;条博客,每页显示&nbsp;{{limit}}&nbsp;条博客,一共&nbsp;{{pages}}&nbsp;页,当前第&nbsp;{{page}}&nbsp;页.</p>
+        <a href="/index/?page={{page-1}}" class="button prevpage">上一页</a>
+        <a href="/index/?page={{page+1}}" class="button nextpage">下一页</a>
     </main>
-    <script>
-    
-    </script>
+    <script src="/public/js/index.js"></script>
 
 
 </body>
