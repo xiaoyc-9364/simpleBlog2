@@ -5,6 +5,7 @@ const Blog = new mongoose.Schema({
     intro: String,
     content: String,
     author: String,
-    date: String
+    date: String,
+    ChatHead: String
 });
 module.exports = mongoose.model('blog', Blog);

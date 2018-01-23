@@ -4,7 +4,7 @@ const url = require('url');
 const throwErr = require('./throwErr');
  
 module.exports = (req, res) => {
-    if (/^\/blogs\//.test(req.url)) {       //查看某篇博客
+    if (/^\/blogs\//.test(req.url)) {       //阅读博客
         const newUrl = url.parse(req.url, true);
         const id = newUrl.query.id.replace(/\"/g, "");
 

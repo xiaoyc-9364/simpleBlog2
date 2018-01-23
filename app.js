@@ -33,7 +33,7 @@ const server = http.createServer(function(req, res) {
             readBlog(req, res);     //阅读博客文章请求
             showIndex(req, res);    //首页请求
             gotoPublish(req, res);  //发布博客页面请求
-            searchBlog(req, res);
+            searchBlog(req, res);   //搜索功能
             
         }
     } catch (error) {

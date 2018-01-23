@@ -21,7 +21,12 @@
             outline: none;
         }
     }
-
+    .portrait {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: none;
+    }
     textarea {
         width: 100%;
         resize: none;

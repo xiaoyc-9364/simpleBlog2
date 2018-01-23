@@ -17,6 +17,13 @@
   outline: none;
 }
 
+.container .portrait {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
 .container textarea {
   width: 100%;
   resize: none;

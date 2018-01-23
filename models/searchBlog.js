@@ -13,26 +13,28 @@ module.exports = (req, res) => {
 };
 
 function searchRange(req, res, keyword, type) {
-    let docsArr = [];
+    let docsArr = [];       //存在搜索到的数据  
     const newUrl = url.parse(req.url, true);
     
     Blog.find().then((docs) => {
         docs.forEach((value, index, arr) => {
-            const pattern = new RegExp(keyword, 'gi');
-            if (type !== 'all') {
+            const pattern = new RegExp(keyword, 'gi');      //创建正则
+
+            if (type !== 'all') {           
                 if (pattern.test(value[type])) {
                     docsArr.push(value);
                 }  
+
             } else {
                 const typeName = ['title', 'intro', 'content', 'author'];
-                for (let i in value) {
+                for (let i in value) {          //搜索类型为all时，在typeName中的属性搜索
                     if (typeName.indexOf(i) !== -1) {
                         if (pattern.test(value[i])) {
                             docsArr.push(value);
                         }
                     }
                 }
-                docsArr = Array.from(new Set(...docsArr));
+                docsArr = Array.from(new Set(...docsArr));  //数组去重
             }
         });
 

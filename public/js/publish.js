@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    const isCommited = false;
-
-
     $('button[value="submit"').click((e) => {
         
             const titleText = $('input[name="blog_title"]').val(),
@@ -41,15 +38,15 @@ $(document).ready(function() {
                     author: authorText,
                     submit: submitType
                 },
-                dataType: 'text',
+                dataType: 'html',
                 success:(result) => {
-                    $(document).html(result);
-                
+                    // $(document).html(result);
+
+                    $('#form').find('input, textarea').val('');
+                    alert('发布博客成功!');
                 },
                 error: (XMLHttpRequest, textStatus, errorThrown) => {
-                    // throw errorThrown;
-                    // alert(textStatus);
-                
+                    throw errorThrown;
                 }
             });
     });

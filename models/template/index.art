@@ -35,7 +35,12 @@
                     <h2><a href="/blogs/?id={{$value._id}}">{{$value.title}}</a></h2>
                     <p class="intro">简介:&nbsp;&nbsp;&nbsp;&nbsp;{{$value.intro}}</p>
                     <div class="detail">
-                        <span class="auth">作者:&nbsp;<a href="/author/?author={{$value.author}}">{{$value.author}}</a></span>
+                        <span class="auth">
+                            作者:&nbsp;
+                            <a href="/author/?author={{$value.author}}">
+                                <img src="{{$value.ChatHead}}" class="portrait"/>&nbsp;{{$value.author}}
+                            </a>
+                        </span>
                         <span class="publish_time">发表时间: {{$value.date}}</span>
                         <span class="comment">评论(0)</span>
                         <span class="page_view">阅读(0)</span>

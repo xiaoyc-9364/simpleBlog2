@@ -2,6 +2,7 @@ $(document).ready(function() {
     $('#search_btn').click(function(e) {
         const keyword = $('#keyword').val(),
             type = $('#search_type').val();
+            
         if (keyword === '') {
             e.preventDefault();
             return;
@@ -20,8 +21,4 @@ $(document).ready(function() {
             }
         });
     });
-
-
-
-
 });
