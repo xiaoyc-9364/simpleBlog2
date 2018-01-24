@@ -100,25 +100,29 @@ a:hover {
   display: inline-block;
 }
 
-.container li .detail span.auth {
-  width: 150px;
+.container li .detail span.author {
+  width: 200px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.container li .detail span.auth a {
+.container li .detail span.author a {
   color: #057fcb;
 }
 
-.container li .detail span.auth, .container li .detail span.publish_time {
+.container li .detail span.author, .container li .detail span.publish_time {
   float: left;
   margin-right: 30px;
 }
 
-.container li .detail span.comment, .container li .detail span.page_view {
+.container li .detail span.appraise, .container li .detail span.read_num {
   float: right;
   margin-left: 30px;
+}
+
+.container li .detail span.appraise a, .container li .detail span.read_num a {
+  color: #4b89e7;
 }
 
 .container .portrait {
@@ -150,6 +154,10 @@ a:hover {
 
 .container .button.nextpage {
   float: right;
+}
+
+.container .button.back_index {
+  display: none;
 }
 
 .container .button:hover {

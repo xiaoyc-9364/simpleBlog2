@@ -1,3 +1,11 @@
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
 .container {
   width: 960px;
   margin: 40px auto;
@@ -18,7 +26,6 @@
 
 .container .publish_info {
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .container .publish_info span a {
@@ -29,6 +36,26 @@
   margin-left: 30px;
 }
 
+.container .commont {
+  float: right;
+}
+
+.container .commont.click_like {
+  padding: 0 10px;
+  color: #ee6666;
+  line-height: 30px;
+}
+
+.container .commont.click_like img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.container .commont.click_like span {
+  font-size: 20px;
+}
+
 .container p {
   white-space: pre-wrap;
   min-height: 30em;
@@ -36,14 +63,12 @@
   padding: 15px;
 }
 
-.container .write_blog,
-.container .back {
+.container .button {
   display: inline-block;
   padding: 0 20px;
   min-width: 120px;
   height: 30px;
-  margin-top: 10px;
-  margin-right: 30px;
+  margin: 10px 30px;
   line-height: 30px;
   color: #000;
   text-align: center;
@@ -54,8 +79,22 @@
   text-decoration: none;
 }
 
-.container .write_blog:hover,
-.container .back:hover {
+.container .button:hover {
   background: #5292d6;
   color: #fff;
+}
+
+.container .estimate {
+  display: none;
+  margin-top: 35px;
+}
+
+.container .estimate textarea[name="appraise"] {
+  width: 100%;
+  resize: none;
+  border: 1px solid #000;
+}
+
+.container .estimate button[type="submit"] {
+  float: right;
 }

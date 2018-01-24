@@ -1,3 +1,12 @@
+.clearfix::after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+
 .container {
     width: 960px;
     margin: 40px auto;
@@ -15,8 +24,6 @@
     }
     .publish_info {
         text-align: center;
-        margin-bottom: 50px;
-
         span a {
             color: rgb(5, 127, 203);
         }
@@ -25,6 +32,30 @@
         } 
 
     }
+    .commont {
+        float: right;
+        &.appraise {
+            
+        }
+
+        &.click_like {
+            padding: 0 10px;
+            color:rgb(238, 102, 102);
+            line-height: 30px;
+            
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-top: 10px;
+            }
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+    
+    
     p {
     
         white-space: pre-wrap;
@@ -33,14 +64,12 @@
         padding: 15px;
     }
 
-    .write_blog,
-    .back {
+    .button {
         display: inline-block;
         padding: 0 20px;
         min-width: 120px;
         height: 30px;
-        margin-top: 10px;
-        margin-right: 30px;
+        margin: 10px 30px;
         line-height: 30px;
         color: #000;
         text-align: center;
@@ -56,5 +85,19 @@
             color: #fff;
         }
     }
+    .estimate {
+        display: none;
+        margin-top: 35px;
+
+        textarea[name="appraise"] {
+            width: 100%;
+            resize: none;
+            border: 1px solid #000;
+        }
+        button[type="submit"] {
+            float: right;
+        }   
+    }
+    
     
 }

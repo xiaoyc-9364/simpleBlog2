@@ -98,8 +98,8 @@ a:hover {
             span {
                 display: inline-block;
 
-                &.auth{
-                    width: 150px;
+                &.author{
+                    width: 200px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -109,16 +109,19 @@ a:hover {
                     }
                 }
 
-                &.auth,
+                &.author,
                 &.publish_time {
                     float: left;
                     margin-right: 30px;
                 }
 
-                &.comment,
-                &.page_view {
+                &.appraise,
+                &.read_num {
                     float: right;
                     margin-left: 30px;
+                    a {
+                        color: rgb(75, 137, 231);
+                    }
                 }
             }
         }
@@ -150,6 +153,10 @@ a:hover {
 
         &.nextpage {
             float: right;
+        }
+
+        &.back_index {
+            display: none;
         }
 
         &:hover {

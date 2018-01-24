@@ -38,12 +38,11 @@ $(document).ready(function() {
                     author: authorText,
                     submit: submitType
                 },
-                dataType: 'html',
+                dataType: 'json',
                 success:(result) => {
-                    // $(document).html(result);
-
-                    $('#form').find('input, textarea').val('');
+                    window.location.href = "/blogs/?id=" + result._id;
                     alert('发布博客成功!');
+                    $('#form').find('input, textarea').val('');
                 },
                 error: (XMLHttpRequest, textStatus, errorThrown) => {
                     throw errorThrown;

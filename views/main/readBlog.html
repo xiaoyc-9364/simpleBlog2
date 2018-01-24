@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
-    <link rel="stylesheet" href="/public/css/readblog.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
-    <link rel="shortcut icon" href="/public/images/bitbug_favicon.ico" />
-    <script src="/public/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../../public/css/readblog.css">
+    <link rel="stylesheet" href="../../public/css/reset.css">
+    <link rel="shortcut icon" href="../../public/images/bitbug_favicon.ico" />
+    <script src="../../public/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <article class="container">
-        <h1 data-id={{_id}}>{{title}}</h1>
+        <h1>{{title}}</h1>
         <div class="publish_info">
             <span class="author">作者:
                 <a href="/author/?author={{author}}">
@@ -24,15 +24,15 @@
         <a href="/publish" class="write_blog button">写博客</a>
         <p class="content">{{content}}</p>
         <button class="appraise commont button" id="appraise">评价</button>
-        <a href="javascript:;" class="click_like commont" id="click_like">
+        <a href="javascript:;" class="click_like commont">
             <img src="/public/images/star_click.png" alt="">
             <span class="like_num"></span>
         </a>
-        <div class="estimate clearfix" id="appraise_text">
+        <div class="estimate" id="appraise_text">
             <textarea name="appraise" id="appraise" rows="5"></textarea>
             <button type="submit" class="button" id="submit">提交</button>
         </div>
     </article>
-    <script src="/public/js/readBlog.js"></script>
+    <script src="../../public/js/readBlog.js"></script>
 </body>
 </html>

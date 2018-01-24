@@ -14,6 +14,7 @@
     <main class="container">
         <h1>博客文章汇总</h1>
         <a href="/publish" class="write_blog  button">写博客</a>
+        <a href="javascript:;" class="back_index button" id="back_index">返回博客汇总表</a>
         <div>
             <div class="search_blog">
                 <label for="search">搜索类型:</label>
@@ -30,29 +31,11 @@
             </div>
             
             <ul class="all_blog_article" id="all_blog_article">
-                {{each list}}    
-                <li>
-                    <h2><a href="/blogs/?id={{$value._id}}">{{$value.title}}</a></h2>
-                    <p class="intro">简介:&nbsp;&nbsp;&nbsp;&nbsp;{{$value.intro}}</p>
-                    <div class="detail">
-                        <span class="auth">
-                            作者:&nbsp;
-                            <a href="/author/?author={{$value.author}}">
-                                <img src="{{$value.chatHead}}" class="portrait"/>&nbsp;{{$value.author}}
-                            </a>
-                        </span>
-                        <span class="publish_time">发表时间: {{$value.date}}</span>
-                        <span class="comment"><a href="javascript:;">评论(0)</a></span>
-                        <span class="read_num"><a href="javascript:;">阅读(0)</a></span>
-                    </div>
-                </li>
-                {{/each}}
-                
             </ul>
         </div>
-        <p class="page_info">一共有&nbsp;{{count}}&nbsp;条博客,每页显示&nbsp;{{limit}}&nbsp;条博客,一共&nbsp;{{pages}}&nbsp;页,当前第&nbsp;{{page}}&nbsp;页.</p>
-        <a href="/index/?page={{page-1}}" class="button prevpage" data-behavior="prev_page">上一页</a>
-        <a href="/index/?page={{page+1}}" class="button nextpage" data-behavior="next_page">下一页</a>
+        <p class="page_info" id="page_info"></p>
+        <a href="#" class="button prevpage" id="prev_page">上一页</a>
+        <a href="#" class="button nextpage" id="next_page">下一页</a>
     </main>
     <script src="/public/js/index.js"></script>
 

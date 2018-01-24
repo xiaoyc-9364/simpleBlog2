@@ -12,7 +12,6 @@ module.exports = (req, res) => {
             _id: id
         }).then(function(info) {
             const html = template(__dirname + "/template/readBlog", info);
-
             res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
             res.write(html);
             res.end();

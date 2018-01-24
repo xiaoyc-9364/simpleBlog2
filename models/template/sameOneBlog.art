@@ -14,9 +14,9 @@
     <main class="container">
         <h1>{{list[0].author}}的博客文章汇总</h1>
         <a href="/publish" class="write_blog button">写博客</a>
-        <a href="/index" class="back button">返回博客汇总表</a>
+        <a href="/" class="back button">返回博客汇总表</a>
         <div>
-            <ul class="all_blog_article">
+            <ul class="all_blog_article" id="all_blog_article">
                 {{each list}}    
                 <li>
                     <h2><a href="/blogs/?id={{$value._id}}">{{$value.title}}</a></h2>
@@ -24,12 +24,12 @@
                     <div class="detail">
                         <span class="auth">作者:&nbsp;
                             <a href="/author/?author={{$value.author}}">
-                                <img src="{{$value.ChatHead}}" class="portrait"/>&nbsp;{{$value.author}}
+                                <img src="{{$value.chatHead}}" class="portrait"/>&nbsp;{{$value.author}}
                             </a>
                         </span>
                         <span class="publish_time">发表时间: {{$value.date}}</span>
-                        <span class="comment">评论(0)</span>
-                        <span class="page_view">阅读(0)</span>
+                        <span class="comment"><a href="javascript:;">评论(0)</a></span>
+                        <span class="read_num"><a href="javascript:;">阅读(0)</a></span>
                     </div>
                 </li>
                 {{/each}}

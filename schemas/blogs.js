@@ -6,6 +6,11 @@ const Blog = new mongoose.Schema({
     content: String,
     author: String,
     date: String,
-    ChatHead: String
+    chatHead: String,
+    like: {
+        type: Number,
+        default: 0
+    }
+    
 });
 module.exports = mongoose.model('blog', Blog);
