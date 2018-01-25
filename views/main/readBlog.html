@@ -23,15 +23,24 @@
         <a href="/" class="back button">返回博客列表</a>
         <a href="/publish" class="write_blog button">写博客</a>
         <p class="content">{{content}}</p>
-        <button class="appraise commont button" id="appraise">评价</button>
-        <a href="javascript:;" class="click_like commont">
-            <img src="/public/images/star_click.png" alt="">
-            <span class="like_num"></span>
-        </a>
-        <div class="estimate" id="appraise_text">
+        <div class="clearfix">
+            <button class="appraise commont button" id="appraise">评价</button>
+            <a href="javascript:;" class="click_like commont" id="click_like">
+                <img src="/public/images/star_click.png" alt="">
+                <span class="like_num">{{like}}</span>
+            </a> 
+        </div>
+        
+        <div class="estimate clearfix" id="appraise_text">
             <textarea name="appraise" id="appraise" rows="5"></textarea>
             <button type="submit" class="button" id="submit">提交</button>
         </div>
+        <ul class="appraise_list">
+            <li>
+                <p>评论</p>
+                <p>时间</p>
+            </li>
+        </ul>
     </article>
     <script src="../../public/js/readBlog.js"></script>
 </body>

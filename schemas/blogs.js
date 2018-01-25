@@ -10,6 +10,14 @@ const Blog = new mongoose.Schema({
     like: {
         type: Number,
         default: 0
+    },
+    readNum: {
+        type: Number,
+        default: 0
+    },
+    appraise: {
+        type: Array,
+        default: []
     }
     
 });

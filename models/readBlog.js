@@ -10,8 +10,10 @@ module.exports = (req, res) => {
 
         Blog.findOne({
             _id: id
-        }).then(function(info) {
-            const html = template(__dirname + "/template/readBlog", info);
+        }).then(function(doc) {
+            doc.readNum++;
+            doc.save();
+            const html = template(__dirname + "/template/readBlog", doc);
             res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
             res.write(html);
             res.end();

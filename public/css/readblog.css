@@ -42,8 +42,10 @@
 
 .container .commont.click_like {
   padding: 0 10px;
+  display: inline-block;
   color: #ee6666;
   line-height: 30px;
+  outline: none;
 }
 
 .container .commont.click_like img {
@@ -53,10 +55,12 @@
 }
 
 .container .commont.click_like span {
+  display: inline-block;
+  width: 50px;
   font-size: 20px;
 }
 
-.container p {
+.container > p {
   white-space: pre-wrap;
   min-height: 30em;
   border: 1px solid #000;
@@ -85,16 +89,42 @@
 }
 
 .container .estimate {
-  display: none;
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 .container .estimate textarea[name="appraise"] {
+  padding: 10px;
   width: 100%;
   resize: none;
   border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .container .estimate button[type="submit"] {
   float: right;
+  cursor: pointer;
+}
+
+.container .estimate .warn_text {
+  padding-left: 10px;
+  color: red;
+}
+
+.container .appraise_list li {
+  height: 100px;
+  border-bottom: 1px solid #000;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.container .appraise_list li .appraise_content {
+  white-space: pre-wrap;
+  height: 65px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+
+.container .appraise_list li + li {
+  margin-top: 10px;
 }

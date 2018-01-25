@@ -6,11 +6,16 @@ module.exports = (req, res) => {
             id = urlQuery.id.replace(/\"/g, '');
 
     Blog.findOne({_id: id}).then((doc) => {
-        const likeNum = doc.like;
-        console.log(likeNum);
-        Blog.findOneAndUpdate({_id: id}, {like: likeNum++}).then((doc) => {
-            consoel.log(doc);
-        });
+        doc.like++;
+        doc.save();
+        return doc;
+    }).then((doc) => {
+        const data = JSON.stringify(doc);
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        res.end(data);
+        return doc;
+    }).catch((err) => {
+        console.log(err);
     })
 
 

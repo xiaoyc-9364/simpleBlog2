@@ -11,7 +11,8 @@ const uploadBlog = require('./models/uploadBlog'),
     favicon = require('./models/favicon'),
     throwErr = require('./models/throwErr'),
     searchBlog = require('./models/searchBlog'),
-    clickLike = require('./models/clickLike');
+    clickLike = require('./models/clickLike'),
+    addAppraise = require('./models/addAppraise'),
     staticRequeat = require('./models/staticRequeat'); //静态请求
 
 
@@ -28,6 +29,7 @@ const server = http.createServer(function(req, res) {
     try {
         if(req.method.toUpperCase() === 'POST') {
             uploadBlog(req, res);
+            addAppraise(req, res);
         } else {
             staticRequeat(req, res);     //css请求
             readBlog(req, res);     //阅读博客文章请求

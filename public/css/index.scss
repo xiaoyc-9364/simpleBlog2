@@ -116,11 +116,20 @@ a:hover {
                 }
 
                 &.appraise,
-                &.read_num {
+                &.read_num,
+                &.like_num {
                     float: right;
                     margin-left: 30px;
                     a {
                         color: rgb(75, 137, 231);
+                    }
+                }
+                &.like_num {
+                    color:rgb(238, 102, 102);
+                    cursor: default;
+                    img {
+                        width: 20px;
+                        height: 20px;
                     }
                 }
             }

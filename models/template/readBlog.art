@@ -19,20 +19,30 @@
                     <img src="{{chatHead}}" class="portrait"/>&nbsp;{{author}}
                 </a>
             </span>
+            <span class="publish_time">发表时间: {{date}}</span>
         </div>
         <a href="/" class="back button">返回博客列表</a>
         <a href="/publish" class="write_blog button">写博客</a>
         <p class="content">{{content}}</p>
-        <button class="appraise commont button" id="appraise">评价</button>
-        <a href="javascript:;" class="click_like commont" id="click_like">
-            <img src="/public/images/star_click.png" alt="">
-            <span class="like_num"></span>
-        </a>
-        <div class="estimate clearfix" id="appraise_text">
-            <textarea name="appraise" id="appraise" rows="5"></textarea>
-            <button type="submit" class="button" id="submit">提交</button>
+
+        <div class="estimate clearfix" id="appraise_container">
+            <textarea name="appraise" id="appraise_text" rows="5" placeholder="请输入评论"></textarea>
+            <button type="submit" class="button" id="submit_appraise">评论</button>
+            <a href="javascript:;" class="click_like commont" id="click_like">
+                <img src="/public/images/star_click.png" alt="">
+                <span class="like_num">{{like}}</span>
+            </a> 
+            <span class="warn_text"></span>
         </div>
+        <ul class="appraise_list" id="appraise_list">
+            {{each appraise}}
+                <li>
+                    <p class="appraise_content">{{$value.text}}</p>
+                    <p class="appraise_date">{{$value.date}}</p>
+                </li>
+            {{/each}}
+        </ul>
     </article>
-    <script src="/public/js/readBlog.js"></script>
+    <script src="/public/js/read.js"></script>
 </body>
 </html>

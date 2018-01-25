@@ -116,13 +116,23 @@ a:hover {
   margin-right: 30px;
 }
 
-.container li .detail span.appraise, .container li .detail span.read_num {
+.container li .detail span.appraise, .container li .detail span.read_num, .container li .detail span.like_num {
   float: right;
   margin-left: 30px;
 }
 
-.container li .detail span.appraise a, .container li .detail span.read_num a {
+.container li .detail span.appraise a, .container li .detail span.read_num a, .container li .detail span.like_num a {
   color: #4b89e7;
+}
+
+.container li .detail span.like_num {
+  color: #ee6666;
+  cursor: default;
+}
+
+.container li .detail span.like_num img {
+  width: 20px;
+  height: 20px;
 }
 
 .container .portrait {

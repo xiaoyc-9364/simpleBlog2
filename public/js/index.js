@@ -18,8 +18,12 @@ $(document).ready(function() {
                                 </a>
                             </span>
                             <span class="publish_time">发表时间: ${value.date}</span>
-                            <span class="appraise"><a href="javascript:;">评论(0)</a></span>
-                            <span class="read_num"><a href="/blogs/?id=${value._id}">阅读(0)</a></span>
+                            <span class="appraise"><a href="/blogs/?id=${value._id}">评论(${value.appraise.length})</a></span>
+                            <span class="read_num"><a href="/blogs/?id=${value._id}">阅读(${value.readNum - 1})</a></span>
+                            <span class="like_num">
+                                    <img src="/public/images/star_click.png"/>
+                                    ${value.like}
+                            </span>
                         </div>
                     </li>`
                 });
@@ -133,7 +137,3 @@ $(document).ready(function() {
     */
 
 });
-
-$(document).ready(function() {
-    
-})
