@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="shortcut icon" href="/public/images/bitbug_favicon.ico" />
     <script src="/public/js/jquery-3.2.1.min.js"></script>
+    <script src="/public/js/template-web.js"></script>
 </head>
 <body>
     <main class="container">
         <h1>博客文章汇总</h1>
         <a href="/publish" class="write_blog  button">写博客</a>
-        <a href="javascript:;" class="back_index button" id="back_index">返回博客汇总表</a>
+        <a href="/" class="back_index button" id="back_index">返回博客汇总表</a>
         <div>
             <div class="search_blog">
                 <label for="search">搜索类型:</label>
@@ -34,11 +35,32 @@
             </ul>
         </div>
         <p class="page_info" id="page_info"></p>
-        <a href="#" class="button prevpage" id="prev_page">上一页</a>
-        <a href="#" class="button nextpage" id="next_page">下一页</a>
+        <a href="javascript:;" class="button prevpage" id="prev_page">上一页</a>
+        <a href="javascript:;" class="button nextpage" id="next_page">下一页</a>
     </main>
+    <script id="blog_item" type="text/html">
+        {{each list value i}}
+            <li>
+                <h2><a href="/blogs/?id={{value._id}}">{{value.title}}</a></h2>
+                <p class="intro">简介:&nbsp;&nbsp;&nbsp;&nbsp;{{value.intro}}</p>
+                <div class="detail">
+                    <span class="author">
+                        作者:&nbsp;
+                        <a href="javascript:;">
+                            <img src="{{value.chatHead}}" class="portrait"/>&nbsp;{{value.author}}
+                        </a>
+                    </span>
+                    <span class="publish_time">发表时间: {{value.date}}</span>
+                    <span class="appraise"><a href="/blogs/?id={{value._id}}">评论({{value.appraise.length}})</a></span>
+                    <span class="read_num"><a href="/blogs/?id={{value._id}}">阅读({{value.readNum - 1}})</a></span>
+                    <span class="like_num">
+                            <img src="/public/images/star_click.png"/>
+                            {{value.like}}
+                    </span>
+                </div>
+            </li>
+        {{/each}}
+    </script>
     <script src="/public/js/index.js"></script>
-
-
 </body>
 </html>

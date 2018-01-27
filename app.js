@@ -2,7 +2,7 @@ const mongoose = require('mongoose'),
     http = require('http'),
     querystring = require('querystring'),
     fs = require('fs');
-const limit = 3;
+
 //自定义模块
 const uploadBlog = require('./models/uploadBlog'),
     showIndex = require('./models/showIndex'),
@@ -15,7 +15,7 @@ const uploadBlog = require('./models/uploadBlog'),
     addAppraise = require('./models/addAppraise'),
     staticRequeat = require('./models/staticRequeat'); //静态请求
 
-
+const limit = 5;  //定义每页显示的条数
 //连接数据库
 mongoose.connect('mongodb://localhost:27019/blog', {useMongoClient: true}, function(err) {
     if (err) {
@@ -28,15 +28,15 @@ mongoose.connect('mongodb://localhost:27019/blog', {useMongoClient: true}, funct
 const server = http.createServer(function(req, res) {
     try {
         if(req.method.toUpperCase() === 'POST') {
-            uploadBlog(req, res);
-            addAppraise(req, res);
+            uploadBlog(req, res);           //发布博客
+            addAppraise(req, res);          //评论功能
         } else {
-            staticRequeat(req, res);     //css请求
-            readBlog(req, res);     //阅读博客文章请求
-            showIndex(req, res, limit);    //首页请求
-            gotoPublish(req, res);  //发布博客页面请求
-            searchBlog(req, res, limit);   //搜索功能
-            clickLike(req, res);
+            staticRequeat(req, res);        //css请求
+            readBlog(req, res);             //阅读博客文章请求
+            showIndex(req, res, limit);     //首页请求
+            gotoPublish(req, res);          //发布博客页面请求
+            // searchBlog(req, res, limit);    //搜索功能
+            clickLike(req, res);            //点赞功能
         }
     } catch (error) {
         if (error) {

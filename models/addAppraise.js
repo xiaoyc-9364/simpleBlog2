@@ -4,7 +4,6 @@ const querystring = require('querystring'),
     getCuttentTime = require('./function/getCurrentTime');
 module.exports = (req, res) => {
     if (/^\/addappraise\//.test(req.url)) {
-        console.log('a');
         let body = '';
 
         req.on('data', (data) => {
@@ -17,16 +16,16 @@ module.exports = (req, res) => {
             const appraise = body.appraise,
                 id = body.id.replace(/\"/g, '');
             
-            Blog.findOne({_id: id}).then((doc) => {
+            Blog.findOne({_id: id}).then((doc) => {     //查找增加评论的数据
                 const appraiseInfo = {
-                    date: getCuttentTime(),
+                    date: getCuttentTime(),         
                     text: appraise
                 };
-                doc.appraise.unshift(appraiseInfo);
+                doc.appraise.unshift(appraiseInfo);     //放到数据库的前端
                 return doc.save();
             }).then((doc) => {
-                const data = JSON.stringify(doc.appraise[0]);
-                res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+                const data = JSON.stringify(doc.appraise[0]);       //返回给前端的数据
+                res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
                 res.end(data);
                 return doc;
             }).catch((err) => {
