@@ -13,6 +13,7 @@ const uploadBlog = require('./models/uploadBlog'),
     searchBlog = require('./models/searchBlog'),
     clickLike = require('./models/clickLike'),
     addAppraise = require('./models/addAppraise'),
+    uploadImg = require('./models/uploadImg');
     staticRequeat = require('./models/staticRequeat'); //静态请求
 
 const limit = 5;  //定义每页显示的条数
@@ -30,6 +31,8 @@ const server = http.createServer(function(req, res) {
         if(req.method.toUpperCase() === 'POST') {
             uploadBlog(req, res);           //发布博客
             addAppraise(req, res);          //评论功能
+            uploadImg(req, res);
+            
         } else {
             staticRequeat(req, res);        //css请求
             readBlog(req, res);             //阅读博客文章请求
@@ -46,3 +49,7 @@ const server = http.createServer(function(req, res) {
     }
 });
 server.listen(8088, 'localhost');
+
+
+
+  

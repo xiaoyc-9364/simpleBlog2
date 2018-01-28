@@ -60,7 +60,7 @@
   font-size: 20px;
 }
 
-.container > p {
+.container .content {
   white-space: pre-wrap;
   min-height: 30em;
   border: 1px solid #000;

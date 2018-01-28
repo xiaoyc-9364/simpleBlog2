@@ -2,7 +2,7 @@
 .container {
     width: 960px;
     margin: 40px auto;
-
+    font-size: 20px;
     label {
         display: block;
         font-size: 18px;
@@ -40,6 +40,15 @@
             text-overflow: ellipsis;
         }
     }
+    
+    .blog_content {
+        min-height: 500px;
+        padding: 10px;
+        // font-size: 20px;
+        border: 1px solid #000;
+        outline: none;
+    }
+
     .warnMessage {
         color: red;
         

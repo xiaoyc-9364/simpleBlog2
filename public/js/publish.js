@@ -3,7 +3,7 @@ $(document).ready(function() {
         
             const titleText = $('input[name="blog_title"]').val(),
                 introText = $('textarea[name="blog_intro"]').val(),
-                contentText = $('textarea[name="blog_content"]').val(),
+                contentText = $('div.blog_content').html(),
                 authorText = $('input[name="blog_author"]').val(),
                 submitType = $('button[value="submit"').val();
 
@@ -54,5 +54,24 @@ $(document).ready(function() {
         $('#form').find('input, textarea').val('');
     });
     
+    $('#upload_img').click(() => {
+        var formData = new FormData();
+        formData.append("file",$("#files")[0].files[0]);
+                // document.execCommand('insertimage', false, '/public/images/1.jpeg');
+    
+        $.ajax({
+            url: /images/,
+            type: 'post',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success:(result) => {
+                console.log(result);
+                document.execCommand('insertimage', false, result);
+            },
+            dataTypeString: 'json'
+        })
+    });
 
 });

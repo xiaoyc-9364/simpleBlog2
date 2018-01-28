@@ -75,5 +75,4 @@ $(document).ready(function() {
         history.back();
         $('#back_index').hide();
     });
-
 });

@@ -13,26 +13,29 @@
 </head>
 <body>
     <main class="container" id="form">
-        <!-- <form action="/" method="post" id="blog_info"> -->
         <label for="blog_title">标题:</label>
-        <input type="text" name="blog_title" placeholder="请输入您的博客标题">
+        <input type="text" name="blog_title">
     
         <label>简介:</label>
-        <textarea name="blog_intro" rows="5" placeholder="请输入您的博客简介"></textarea>
+        <textarea name="blog_intro" rows="5"></textarea>
     
         <label>内容:</label>
-        <textarea name="blog_content" rows="15" placeholder="请输入您的博客内容"></textarea>
+        <div class="blog_content" contenteditable="true"></div>
+        <!-- <textarea name="blog_content" rows="15" placeholder="请输入您的博客内容"></textarea> -->
         <label>作者:</label>
-        <input type="text" name="blog_author" placeholder="请输入您的名字">
+        <input type="text" name="blog_author">
         <p id="warnMessage" class="warnMessage"></p>
         <div class="submit_button">
             <a href="/" class="back">返回博客列表</a>
             <button type="submit" name="submit" value="submit">发布</button>
-            <!-- <button type="submit" name="submit" value="temstorage">存为草稿</button> -->
             <button type="reset" name="reset" value="reset">清空</button>
+            <form action="" id="abc">
+
+                <input type="file" name="uploadfile" class="button" id="files">
+            </form>
+            <button id="upload_img">上传图片</button>
         </div>
-            
-        <!-- </form> -->
+        
     </main>
     <script src="/public/js/publish.js"></script>
 </body>

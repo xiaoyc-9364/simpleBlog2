@@ -48,8 +48,8 @@ module.exports = function(req, res) {
                 }).then(function(newData) {
                     const data = JSON.stringify(newData);
                     res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
-                    res.write(data);
-                    res.end();
+                    // res.write(data);
+                    res.end(data);
                     return newData;
                 }).catch((err) => {
                     console.log(err);
