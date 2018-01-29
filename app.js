@@ -16,7 +16,7 @@ const uploadBlog = require('./models/uploadBlog'),
     uploadImg = require('./models/uploadImg');
     staticRequeat = require('./models/staticRequeat'); //静态请求
 
-const limit = 5;  //定义每页显示的条数
+const limit = 3;  //定义每页显示的条数
 //连接数据库
 mongoose.connect('mongodb://localhost:27019/blog', {useMongoClient: true}, function(err) {
     if (err) {

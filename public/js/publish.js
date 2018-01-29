@@ -57,8 +57,6 @@ $(document).ready(function() {
     $('#upload_img').click(() => {
         var formData = new FormData();
         formData.append("file",$("#files")[0].files[0]);
-                // document.execCommand('insertimage', false, '/public/images/1.jpeg');
-    
         $.ajax({
             url: /images/,
             type: 'post',
@@ -67,11 +65,11 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success:(result) => {
-                console.log(result);
                 document.execCommand('insertimage', false, result);
             },
             dataTypeString: 'json'
-        })
+        });
+        $("#files").val('');
     });
 
 });

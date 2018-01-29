@@ -23,7 +23,7 @@
         </div>
         <a href="/" class="back button">返回博客列表</a>
         <a href="/publish" class="write_blog button">写博客</a>
-        <div class="content">{{content}}</div>
+        <div class="content">{{@content}}</div>
 
         <div class="estimate clearfix" id="appraise_container">
             <textarea name="appraise" id="appraise_text" rows="5" placeholder="请输入评论"></textarea>
